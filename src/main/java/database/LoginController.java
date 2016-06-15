@@ -9,14 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/*
-
-create table aluno (
-  matricula int,
-  nome varchar(255)
-)
-
-*/
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
 
@@ -40,15 +32,15 @@ public class LoginController extends HttpServlet {
 			String usuario = valor(req, "usuario", "");
 			String senha = valor(req, "senha", "");
 			if (op.equals("entrar")) {
-				//Di mintira!
-				if (usuario.equals("joao") && senha.equals("123")) {
+				boolean resposta = LoginDao.comparar(usuario, senha);
+				if (resposta == true) {
 
 					//Obter a sessão.
 					HttpSession session = req.getSession();
 					//Incluir variável na região de memória da sessão.
 					session.setAttribute("usuario", usuario);
 					
-					resp.sendRedirect("aluno");
+					resp.sendRedirect("funcionario");
 				} else {
 					msg = "Usuário ou senha incorreta.";
 				}

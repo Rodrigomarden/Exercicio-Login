@@ -8,18 +8,24 @@ import java.sql.SQLException;
 /**
  * DAO = Data Access Object.
  */
-public class AlunoDao {
+public class FuncionarioDao {
 
-	private static final String URL = "jdbc:derby:db;create=true";
+	private static final String URL = "jdbc:derby:bd;create=true";
 
-	public static void inclui(int matricula, String nome) throws SQLException {
+	public static void inclui(String nome, String cpf, String rg, String endereco, String datanasc, String sexo, String salario) throws SQLException {
 		// Abrir uma conexão com o banco de dados.
 		Connection conn = DriverManager.getConnection(URL);
 		// Executar instrução SQL.
-		String sql = "insert into aluno (matricula, nome) values (?, ?)";
+		String sql = "insert into funcionario (nome, cpf, rg, endereco, datanasc, sexo, salario) values (?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, matricula);
-		pstmt.setString(2, nome);
+		pstmt.setString(1, nome);
+		pstmt.setString(2, cpf);
+		pstmt.setString(3, rg);
+		pstmt.setString(4, endereco);
+		pstmt.setString(5, datanasc);
+		pstmt.setString(6, sexo);
+		pstmt.setString(7, salario);
+		
 		pstmt.executeUpdate();
 		// Fechar sentença.
 		pstmt.close();

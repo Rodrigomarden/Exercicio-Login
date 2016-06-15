@@ -32,12 +32,11 @@ public class SegurancaFilter implements Filter {
 
 		//URL requisitada.
 		String requestURI = request.getRequestURI();
-		System.out.println("URL requisitada: " + requestURI);
 
 		boolean loginRequest = requestURI.equals(loginUri);
 
 		//Se estiver logado ou se for a página de login.
-		if (loggedIn || loginRequest || requestURI.endsWith(".css")) {
+		if (loggedIn || loginRequest || requestURI.endsWith(".css") || requestURI.endsWith("dbclient.jsp") ) {
 			//Segue adiante.
 			chain.doFilter(request, response);
 		} else {

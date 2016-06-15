@@ -16,8 +16,8 @@ create table aluno (
 )
 
 */
-@WebServlet("/aluno")
-public class AlunoController extends HttpServlet {
+@WebServlet("/funcionario")
+public class FuncionarioController extends HttpServlet {
 
 	private String valor(HttpServletRequest req, String param, String padrao) {
 		String result = req.getParameter(param);
@@ -36,24 +36,23 @@ public class AlunoController extends HttpServlet {
 		try {
 			String msg;
 			String op = valor(req, "operacao", "");
-			int matricula = toInt(req, "matricula", "0");
 			String nome = valor(req, "nome", "");
-			if (op.equals("incluir")) {
-				AlunoDao.inclui(matricula, nome);
+			String cpf = valor(req, "cpf", "");
+			String rg = valor(req, "rg", "");
+			String endereco = valor(req, "endereco", "");
+			String datanasc = valor(req, "datanasc", "");
+			String sexo = valor(req, "sexo", "");
+			String salario = valor(req, "salario", "");
+			if (op.equals("cadastrar")) {
+				FuncionarioDao.inclui(nome, cpf, rg, endereco, datanasc, sexo, salario);
 				msg = "Inclusão realizada com sucesso.";
-			} else if (op.equals("alterar")) {
-				AlunoDao.alterar(matricula, nome);
-				msg = "Alteração realizada com sucesso.";
-			} else if (op.equals("excluir")) {
-				AlunoDao.excluir(matricula);
-				msg = "Exclusão realizada com sucesso.";
 			} else if (op.equals("")) {
 				msg = "";
 			} else {
 				throw new IllegalArgumentException("Operação \"" + op + "\" não suportada.");
 			}
 			req.setAttribute("msg", msg);
-			req.getRequestDispatcher("AlunoView.jsp").forward(req, resp);
+			req.getRequestDispatcher("FuncionarioView.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace(resp.getWriter());
 		}

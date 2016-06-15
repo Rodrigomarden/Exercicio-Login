@@ -1,13 +1,23 @@
 -- URL JDBC para acessar o banco de dados.
---jdbc:derby:C:\\banco-de-teste;create=true
+--jdbc:derby:bd;create=true
 
 select tablename from SYS.SYSTABLES where tabletype ='T'
 
-create table produto (
-  numero int,
-  tipo int,
-  nome varchar(255)
+create table login (
+  userlg varchar(255),
+  pass varchar(255)
 )
+
+create table funcionario {
+nome varchar(255),
+cpf varchar(15),
+rg varchar(8),
+endereco varchar(255),
+datanasc varchar(12),
+sexo varchar(12),
+salario varchar(55)
+}
+
 
 select numero, tipo, nome from produto
 
