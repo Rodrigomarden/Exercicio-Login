@@ -43,76 +43,39 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li class="active"><a href="#">Cadastrar</a></li>
+				<li><a href="funcionario">Cadastrar</a></li>
 				<li><a href="consultar">Consultar/Excluir</a></li>
-				<li><a href="listar">Listar</a></li>
+				<li class="active"><a href="#">Listar</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
 	</nav>
 	<div class="janela">
 		<form>
-		<h1>Cadastrar</h1>
+		<h1>Funcionarios</h1>
 		<br>
 		<br>
-			<table>
-				<tr>
-					<td>Nome:</td>
-					<td><input name="nome" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td>Cpf:</td>
-					<td><input name="cpf" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td>Rg:</td>
-					<td><input name="rg" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td>Endereço:</td>
-					<td><input name="endereco" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td>Data Nascimento:</td>
-					<td><input name="datanasc" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td>Sexo:</td>
-					<td><input name="sexo" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td>Salario:</td>
-					<td><input name="salario" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<button name="operacao" value="cadastrar">Cadastrar</button></td>
-				</tr>
-			</table>
-			<td><b>${msg}</b></td>
+		<table border="2">
+			<tr>
+				<td width="15%"><b><center/>${tnome}</b></td>
+				<td width="15%"><b><center/>${tcpf}</b></td>
+				<td width="15%"><b><center/>${trg}</b></td>
+				<td width="15%"><b><center/>${tendereco}</b></td>
+				<td width="15%"><b><center/>${tdataNasc}</b></td>
+				<td width="15%"><b><center/>${tsexo}</b></td>
+				<td width="15%"><b><center/>${tsalario}</b></td>
+			</tr>
+			<tr>
+				<td><center/>${nome}</td>
+				<td><center/>${cpf}</td>
+				<td><center/>${rg}</td>
+				<td><center/>${endereco}</td>
+				<td><center/>${dataNasc}</td>
+				<td><center/>${sexo}</td>
+				<td><center/>${salario}</td>
+			</tr>
+		</table>
+			<b>${msg}</b>
 		</form>
 	</div>
   </body>

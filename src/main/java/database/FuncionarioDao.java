@@ -32,33 +32,4 @@ public class FuncionarioDao {
 		// Fechar conexão.
 		conn.close();
 	}
-
-	public static void alterar(int matricula, String nome) throws SQLException {
-		// Abrir uma conexão com o banco de dados.
-		Connection conn = DriverManager.getConnection(URL);
-		// Executar instrução SQL.
-		String sql = "update aluno set nome = ? where matricula = ?";
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, nome);
-		pstmt.setInt(2, matricula);
-		pstmt.executeUpdate();
-		// Fechar sentença.
-		pstmt.close();
-		// Fechar conexão.
-		conn.close();
-	}
-
-	public static void excluir(int matricula) throws SQLException {
-		// Abrir uma conexão com o banco de dados.
-		Connection conn = DriverManager.getConnection(URL);
-		// Executar instrução SQL.
-		String sql = "delete from aluno where matricula = ?";
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, matricula);
-		pstmt.executeUpdate();
-		// Fechar sentença.
-		pstmt.close();
-		// Fechar conexão.
-		conn.close();
-	}
 }

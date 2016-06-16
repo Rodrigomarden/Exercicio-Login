@@ -8,7 +8,7 @@ create table login (
   pass varchar(255)
 )
 
-create table funcionario {
+create table funcionario (
 nome varchar(255),
 cpf varchar(15),
 rg varchar(8),
@@ -16,7 +16,7 @@ endereco varchar(255),
 datanasc varchar(12),
 sexo varchar(12),
 salario varchar(55)
-}
+)
 
 
 select numero, tipo, nome from produto

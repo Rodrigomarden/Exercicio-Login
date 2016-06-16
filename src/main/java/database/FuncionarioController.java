@@ -8,14 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/*
-
-create table aluno (
-  matricula int,
-  nome varchar(255)
-)
-
-*/
 @WebServlet("/funcionario")
 public class FuncionarioController extends HttpServlet {
 
@@ -36,6 +28,7 @@ public class FuncionarioController extends HttpServlet {
 		try {
 			String msg;
 			String op = valor(req, "operacao", "");
+			System.out.println(op);
 			String nome = valor(req, "nome", "");
 			String cpf = valor(req, "cpf", "");
 			String rg = valor(req, "rg", "");
@@ -45,11 +38,19 @@ public class FuncionarioController extends HttpServlet {
 			String salario = valor(req, "salario", "");
 			if (op.equals("cadastrar")) {
 				FuncionarioDao.inclui(nome, cpf, rg, endereco, datanasc, sexo, salario);
-				msg = "Inclusão realizada com sucesso.";
+				msg = "Cadastro realizado com sucesso.";
 			} else if (op.equals("")) {
 				msg = "";
 			} else {
 				throw new IllegalArgumentException("Operação \"" + op + "\" não suportada.");
+			}
+			if (op.equals("cadastra")) {
+				resp.sendRedirect("funcionario");
+			} else if (op.equals("consulta")) {
+				System.out.println("bb");
+				resp.sendRedirect("consultar");
+			} else if (op.equals("lista")) {
+				resp.sendRedirect("listar");
 			}
 			req.setAttribute("msg", msg);
 			req.getRequestDispatcher("FuncionarioView.jsp").forward(req, resp);

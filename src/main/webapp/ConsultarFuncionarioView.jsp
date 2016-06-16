@@ -43,8 +43,8 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li class="active"><a href="#">Cadastrar</a></li>
-				<li><a href="consultar">Consultar/Excluir</a></li>
+				<li><a href="funcionario">Cadastrar</a></li>
+				<li class="active"><a href="#">Consultar/Excluir</a></li>
 				<li><a href="listar">Listar</a></li>
 			</ul>
 		</div>
@@ -52,7 +52,7 @@
 	</nav>
 	<div class="janela">
 		<form>
-		<h1>Cadastrar</h1>
+		<h1>Consultar/Excluir</h1>
 		<br>
 		<br>
 			<table>
@@ -71,48 +71,39 @@
 					<td><br></td>
 				</tr>
 				<tr>
-					<td>Rg:</td>
-					<td><input name="rg" class="form-control" required></td>
-				</tr>
-				<tr>
 					<td><br></td>
 				</tr>
 				<tr>
-					<td>Endereço:</td>
-					<td><input name="endereco" class="form-control" required></td>
+					<td><button name="operacao" value="consulta">Consultar</button></td>
+					<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<button name="operacao" value="exclui">Excluir</button></td>
 				</tr>
 				<tr>
 					<td><br></td>
-				</tr>
-				<tr>
-					<td>Data Nascimento:</td>
-					<td><input name="datanasc" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td>Sexo:</td>
-					<td><input name="sexo" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td>Salario:</td>
-					<td><input name="salario" class="form-control" required></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<button name="operacao" value="cadastrar">Cadastrar</button></td>
 				</tr>
 			</table>
-			<td><b>${msg}</b></td>
+			<table border="1">
+				<tr>
+					<td>${tnome}</td>
+					<td>${tcpf}</td>
+					<td>${trg}</td>
+					<td>${tendereco}</td>
+					<td>${tdataNasc}</td>
+					<td>${tsexo}</td>
+					<td>${tsalario}</td>
+				</tr>
+				<tr>
+					<td>${nome}</td>
+					<td>${cpf}</td>
+					<td>${rg}</td>
+					<td>${endereco}</td>
+					<td>${dataNasc}</td>
+					<td>${sexo}</td>
+					<td>${salario}</td>
+				</tr>
+			</table>
+			<b>${msg}</b>
 		</form>
 	</div>
   </body>

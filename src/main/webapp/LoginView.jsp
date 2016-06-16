@@ -26,9 +26,5 @@
             </a>
         </div><!-- /card-container -->
     </div><!-- /container -->
-
-	
-	
   </body>
-
 </html>
