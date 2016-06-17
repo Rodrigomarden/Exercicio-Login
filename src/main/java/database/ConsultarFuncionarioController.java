@@ -61,7 +61,7 @@ public class ConsultarFuncionarioController extends HttpServlet {
 				rg=func.getRg();
 				dataNasc=func.getDatanasc();
 				endereco=func.getEndereco();
-				salario=func.getEndereco();
+				salario=func.getSalario();
 				sexo=func.getSexo();
 				
 				tNome = "Nome";
@@ -91,9 +91,11 @@ public class ConsultarFuncionarioController extends HttpServlet {
 				if(func.getNome()==null) {
 					msg = "Funcionário não encontrado.";
 				}
+				resp.sendRedirect("consultar");
 			} else if (op.equals("exclui")) {
 				ConsultarFuncionarioDao.excluir(nome, cpf);
 				msg = "Funcionario excluido com sucesso.";
+				resp.sendRedirect("consultar");
 			} else if (op.equals("")) {
 				msg = "";
 			} else {

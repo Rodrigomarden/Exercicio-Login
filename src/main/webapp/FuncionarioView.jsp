@@ -28,7 +28,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Gestão De Funcionário</a>
+			<a class="navbar-brand" href="#">Gestï¿½o De Funcionï¿½rio</a>
 		</div>
 		<!-- Top Menu Items -->
 		<ul class="nav navbar-right top-nav">
@@ -36,7 +36,7 @@
 				data-toggle="dropdown"><i class="fa fa-user"></i> ${usuario} <b
 					class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="login"><i class="fa fa-fw fa-power-off"></i>
+					<li><a href="logout"><i class="fa fa-fw fa-power-off"></i>
 							Sair</a></li>
 				</ul></li>
 		</ul>
@@ -78,7 +78,7 @@
 					<td><br></td>
 				</tr>
 				<tr>
-					<td>Endereço:</td>
+					<td>Endereï¿½o:</td>
 					<td><input name="endereco" class="form-control" required></td>
 				</tr>
 				<tr>

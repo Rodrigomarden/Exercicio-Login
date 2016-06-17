@@ -35,6 +35,7 @@ public class ListarFuncionarioDao {
 			func.setSalario(rs.getString("salario"));
 			lista.add(func);
 		}
+		rs.close();
 		// Fechar sentença.
 		pstmt.close();
 		// Fechar conexão.

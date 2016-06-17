@@ -28,7 +28,6 @@ public class FuncionarioController extends HttpServlet {
 		try {
 			String msg;
 			String op = valor(req, "operacao", "");
-			System.out.println(op);
 			String nome = valor(req, "nome", "");
 			String cpf = valor(req, "cpf", "");
 			String rg = valor(req, "rg", "");
@@ -39,6 +38,7 @@ public class FuncionarioController extends HttpServlet {
 			if (op.equals("cadastrar")) {
 				FuncionarioDao.inclui(nome, cpf, rg, endereco, datanasc, sexo, salario);
 				msg = "Cadastro realizado com sucesso.";
+				resp.sendRedirect("funcionario");
 			} else if (op.equals("")) {
 				msg = "";
 			} else {

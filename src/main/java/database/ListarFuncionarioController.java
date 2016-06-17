@@ -52,15 +52,7 @@ public class ListarFuncionarioController extends HttpServlet {
 			tEndereco = "Endereço";
 			tSalario = "Salario";
 			tSexo = "Sexo";
-			
-			req.setAttribute("tnome", tNome);
-			req.setAttribute("tcpf", tCpf);
-			req.setAttribute("trg", tRg);
-			req.setAttribute("tdataNasc", tDatanasc);
-			req.setAttribute("tendereco", tEndereco);
-			req.setAttribute("tsalario", tSalario);
-			req.setAttribute("tsexo", tSexo);
-			
+		
 			listaFunc=ListarFuncionarioDao.listar();
 			if(listaFunc.size()==0) {
 				msg = "Funcionário não encontrado.";
@@ -89,6 +81,15 @@ public class ListarFuncionarioController extends HttpServlet {
 				req.setAttribute("endereco", endereco);
 				req.setAttribute("salario", salario);
 				req.setAttribute("sexo", sexo);
+				
+				
+				req.setAttribute("tnome", tNome);
+				req.setAttribute("tcpf", tCpf);
+				req.setAttribute("trg", tRg);
+				req.setAttribute("tdataNasc", tDatanasc);
+				req.setAttribute("tendereco", tEndereco);
+				req.setAttribute("tsalario", tSalario);
+				req.setAttribute("tsexo", tSexo);
 			}
 			req.setAttribute("msg", msg);
 			req.getRequestDispatcher("ListarFuncionarioView.jsp").forward(req, resp);
