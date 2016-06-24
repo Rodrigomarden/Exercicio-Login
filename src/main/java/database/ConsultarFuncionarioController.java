@@ -46,7 +46,6 @@ public class ConsultarFuncionarioController extends HttpServlet {
 			String tSexo = "";
 			
 			if (op.equals("cadastra")) {
-				System.out.println("aaa");
 				resp.sendRedirect("funcionario");
 			} else if (op.equals("consultaa")) {
 				resp.sendRedirect("consultar");

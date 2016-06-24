@@ -45,6 +45,7 @@
 			<ul class="nav navbar-nav side-nav">
 				<li class="active"><a href="#">Cadastrar</a></li>
 				<li><a href="consultar">Consultar/Excluir</a></li>
+				<li><a href="alterar">Alterar</a></li>
 				<li><a href="listar">Listar</a></li>
 			</ul>
 		</div>

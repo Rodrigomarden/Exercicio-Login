@@ -28,7 +28,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Gest�o De Funcion�rio</a>
+			<a class="navbar-brand" href="#">Gestão De Funcionário</a>
 		</div>
 		<!-- Top Menu Items -->
 		<ul class="nav navbar-right top-nav">
@@ -45,37 +45,51 @@
 			<ul class="nav navbar-nav side-nav">
 				<li><a href="funcionario">Cadastrar</a></li>
 				<li><a href="consultar">Consultar/Excluir</a></li>
-				<li><a href="alterar">Alterar</a></li>
-				<li class="active"><a href="#">Listar</a></li>
+				<li class="active"><a href="#">Alterar</a></li>
+				<li><a href="listar">Listar</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
 	</nav>
 	<div class="janela">
 		<form>
-		<h1>Funcionarios</h1>
+		<h1>Alterar</h1>
 		<br>
 		<br>
-		<table border="2">
-			<tr>
-				<td width="15%"><b><center/>${tnome}</b></td>
-				<td width="15%"><b><center/>${tcpf}</b></td>
-				<td width="15%"><b><center/>${trg}</b></td>
-				<td width="15%"><b><center/>${tendereco}</b></td>
-				<td width="15%"><b><center/>${tdataNasc}</b></td>
-				<td width="15%"><b><center/>${tsexo}</b></td>
-				<td width="15%"><b><center/>${tsalario}</b></td>
-			</tr>
-			<tr>
-				<td><center/>${nome}</td>
-				<td><center/>${cpf}</td>
-				<td><center/>${rg}</td>
-				<td><center/>${endereco}</td>
-				<td><center/>${dataNasc}</td>
-				<td><center/>${sexo}</td>
-				<td><center/>${salario}</td>
-			</tr>
-		</table>
+			<table>
+				<tr>
+					<td>Cpf:</td>
+					<td><input name="cpf" class="form-control" required></td>
+				</tr>
+				<tr>
+					<td>Insira: </td>
+					<td><input name="xx" class="form-control" required></td>
+				</tr>
+				<tr>
+					<td><br></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><br></td>
+				</tr>
+				<tr>
+					<td><br></td>
+				</tr>
+				<tr>
+					<td><select name="operacao" class="form-control">
+						  <option value="alteraNome">Nome</option>
+						  <option value="alteraEndereco">Endereco</option>
+						  <option value="alteraSalario">Salario</option>
+						</select>
+					</td>
+					<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<button>Alterar</button></td>
+				</tr>
+				<tr>
+					<td><br></td>
+				</tr>
+			</table>
 			<b>${msg}</b>
 		</form>
 	</div>
